@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>登陆页面</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                padding: 0px;
+                margin: auto 0;
+                width: 1000px;
+                height: 800px;
+                text-align: center;
+            }
+            .box-1{
+                width: 300px;
+                height: 200px;
+                float: left;
+                margin: 200px 0 0 450px;
+                background-color:#7CF574;
+            }
+            .hang-1{
+                font-size: 15px;
+                margin: 10px 0 0 10px;   
+            }
+            .span-1{
+                margin: 1px 0 0 -25px;  
+            }
+            input{
+                height: 17px;
+            }
+            #sub{
+                font-size: 15px;
+                width: 80px;
+                height: 30px;
+                margin: 10px 0 0 -60px;  
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box-1">
+            <h3>登陆</h3>
+            <form action="login" method="post">
+                <div class="hang-1"> <span class="span-1">用户名</span>  <input type="text" name="username"></div><br>
+                <span class="span-2"> 密码</span>  <input type="password" name="password"><br>
+
+                <input type="submit" value="点击登陆" id="sub"/>
+
+            </form>
+        </div>
+
+    </body>
+</html>

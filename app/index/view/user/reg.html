@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="../User/doReg" method="post">
+          用户名：  <input type="text"  name="username"  placeholder="请输入用户名"/><br>
+          密码：&nbsp&nbsp  <input type="password"  name="password"  /><br>
+          邮箱：&nbsp&nbsp  <input type="email" name="email" placeholder="请输入合法邮箱" /><br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="注册用户"id="search"/>
+            <p id="searchResult"></p>
+        </form>
+        <script type="text/javascript" src="/static/index/js/jquery-1.6.js"></script>
+
+<!--        <script>
+            $(document).ready(function () {
+                $("#search").click(function () {
+                    var user_id = $("#keyword").val();
+                    $.post('../UserInterface/index', {user_id: user_id}, function (data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                        //将json数据转换位数组对象
+                        var res = eval("("+data+")");
+                        $.each(res, function (data) {
+                            //循环获取数据  
+                            var username = res[data].username;
+                            var sex =   res[data].sex;
+                            var email = res[data].email;
+                            var reg_time = res[data].reg_time;
+                            $("#searchResult").html("code:"+res.code+"\nMsg:"+res.msg+"<br>username:" + username + "<br>Email:" + email + "<br>Sex:" + sex + "<br>Reg_time:"+reg_time+"<br/>");
+                        });
+                    });
+                });
+            });
+
+        </script> -->
+    </body>
+</html>

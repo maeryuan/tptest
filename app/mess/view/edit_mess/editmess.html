@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                margin: 0px;
+                padding: 0px;
+                width: 1000px;
+                height: 600px;
+                
+                margin: 0 auto;
+                font-size: 16px;
+            }
+        
+            .right-box-content{
+                width: 610px;
+                height:360px;
+                margin-top: 0px;
+                margin-left: 0px;
+                float: left;
+
+            }
+            .title{
+                height: 60px;
+                float:left;
+            }
+            .title span,.content span{
+                font-weight: bold;
+                font-size: 20px;
+            }
+            .title input{
+                width: 606px;
+                height: 26px;
+                margin-top: 2px;
+                font-size: 20px;
+            }
+            .content{
+                width: 610px;
+                height: 260px;
+                float: left;
+            }
+            .content textarea{
+                width: 606px;
+                height: 220px;
+                margin-top: 3px;
+                font-size: 20px;
+            }
+            .submit input{
+                width: 60px;
+                height: 35px;
+                font-size: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+    
+
+        <div class="right-box-content">
+            <form action="editInfo" method="post">
+                {foreach $res as $val}
+                <div class="title"> 
+                    <span>留言主题</span><br>
+                    <input type="text" name="title" placeholder="{$val.title}">
+                    
+                </div>
+                <div class="content">
+                    <span>留言内容</span><br>
+                    <textarea row="10" name="content">
+                        {$val.content}
+                    </textarea>
+                </div>
+                {/foreach}
+                <div class="submit"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+    </body>
+</html>

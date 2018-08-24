@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                margin: 0px;
+                padding: 0px;
+                width: 1000px;
+                height: 600px;
+                border: 1px solid pink;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+            .nav{
+                width:900px;
+                height: 55px;
+                background-color:skyblue;
+                margin-left: 50px;
+                color: white;
+
+            }
+            .nav a:link{
+                text-decoration: none;
+                color: white;              
+            }
+            .nav a:hover{
+                text-decoration: underline;
+                color: #7CF574;
+            }
+            .nav span{
+                margin-top: 15px;
+                margin-left: 20px;
+                float: left;
+            }
+            .left-box{
+                width: 260px;
+                margin-left: 50px;
+                margin-top: 30px;
+                border: 1px solid silver;
+                float: left;
+            }
+            .row{
+                height: 40px;
+                background-color: blue;
+                color: white;
+            }
+            .row span{
+                margin-top: 10px;
+                margin-left: 20px;
+                float: left;
+            }
+
+            .right-box{
+                width: 610px;
+                height:200px;
+                margin-top: 30px;
+                margin-left: 30px;
+                float: left;
+                border: 1px solid silver;
+            }
+            .title{
+                height: 40px;
+                background-color:blue;
+            }
+            .title span,.date span{
+                margin-top: 10px;
+                margin-left: 20px;
+                float: left;
+                color: white;
+            }
+            .content{
+                height: 120px;
+            }
+            .date{
+                height: 40px;
+                background-color:#ADD8E6;
+
+            }
+            .date span{
+                color: black;
+            }
+            .pager{
+
+                list-style-type:none;
+            }
+            .pager ul{
+                list-style-type:none;
+            }
+            .pager ul li{
+                float: left;
+                padding: 20px;
+            }
+          
+        </style>
+
+    </head>
+    <body>
+        <!--nav-->
+        <div class="nav">
+            <span><a href="index" target="editmess"> 留言板</a></span>
+            <span> <a  href="../AddMess/addmess" target="_self"> 发布留言</a></span>
+            <span> <a  href="../SelMess/index" target="_self"> 查看留言</a></span>
+        </div>
+        <!--left-box-->
+        <div class="left-box">
+            <div class="row">
+                <span>排行</span>
+            </div>
+            <div class="row-content">
+                <ul>
+                    {foreach $res as $val}
+                    <li><span><a href="#">{$val.title}</a></span></li><br>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+       
+       
+        
+    </body>
+</html>
