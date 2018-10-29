@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>发送红包</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/admin/css/backstage.css">
+    </head>
+    <body>   
+        <h3>发送列表</h3>
+        <div class="details">
+            
+            <!--表格-->
+            <table class="table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th width="5%">id</th>
+                        <th width="10%">红包名</th>                       
+                        <th>操作</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    {volist name="list" id="data"}
+                   
+                    <tr>
+                        <!--这里的id和for里面的c1 需要循环出来-->
+                        <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$data.redpacket_model_id}</label></td>
+                        <td>{$data.rd_name}</td>
+                        
+                        <td align="center"><input type="button" value="编辑发送" class="btn" onclick="send({$data.redpacket_model_id})">
+
+                    {/volist}</table>{$page}
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+            function send(id){
+            window.location = "editSend?id=" + id;
+            }
+    
+</script>
+</body>
+</html>
