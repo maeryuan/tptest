@@ -17,7 +17,7 @@ use think\Controller;
 use org\Verify;
 
 class Login extends Controller
-{
+{ 
     // 登录页面
     public function index()
     {

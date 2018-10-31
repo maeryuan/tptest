@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="col-sm-5">
-            <form method="post" action="test">
+            <form method="post" action="index.html">
                 <p class="m-t-md" id="err_msg">登录到snake后台</p>
                 <input type="text" class="form-control uname" placeholder="用户名" id="user_name" />
                 <input type="password" class="form-control pword m-b" placeholder="密码" id="password" />
                 <div style="margin-bottom:70px">
                     <input type="text" class="form-control" placeholder="验证码" style="color:black;width:120px;float:left;margin:0px 0px;" name="code" id="code"/>
-                    <img src="{:url('checkVerify')}" onclick="javascript:this.src='{:url('checkVerify')}'?tm='+Math.random();" style="float:right;cursor: pointer"/>
+                    <img src="{:url('checkVerify')}" onclick="javascript:this.src='{:url('checkVerify')}?tm='+Math.random();" style="float:right;cursor: pointer"/>
                 </div>
                 <input class="btn btn-success btn-block" id="login_btn" value="登录"/>
             </form>
@@ -73,7 +73,7 @@
             var username = $('#user_name').val();
             var password = $('#password').val();
             var code = $('#code').val();
-            $.post("{:url('Login/doLogin')}",{'user_name':username, 'password':password, 'code':code},function(data){
+            $.post("{:url('login/doLogin')}",{'user_name':username, 'password':password, 'code':code},function(data){
                 lock = false;
                 $('#login_btn').val('登录').removeClass('btn-danger').addClass('btn-success');
                 if(data.code!=1){

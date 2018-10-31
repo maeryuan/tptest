@@ -18,6 +18,13 @@ class Index extends Controller{
 //        ]);
 
         return $this->fetch('/index');
+    } /**
+     * 后台默认首页
+     * @return mixed
+     */
+    public function indexPage() {
+        return $this->fetch('index');
     }
+    
 }
 
