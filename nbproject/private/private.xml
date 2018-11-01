@@ -5,8 +5,13 @@
         <group>
             <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/view/login.html</file>
             <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/view/index.html</file>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/controller/Index.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/controller/Node.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/controller/Role.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/model/UserModel.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/model/RoleModel.php</file>
             <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/controller/Login.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/snake/database.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/conf/database.php</file>
         </group>
     </open-files>
 </project-private>

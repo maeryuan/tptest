@@ -65,12 +65,13 @@ class User extends Base
             $param = input('post.');
 
             $param['password'] = md5($param['password']);
+            
             $user = new UserModel();
             $flag = $user->insertUser($param);
 
             return json(msg($flag['code'], $flag['data'], $flag['msg']));
         }
-
+       
         $role = new RoleModel();
         $this->assign([
             'role' => $role->getRole(),

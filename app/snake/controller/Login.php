@@ -78,7 +78,7 @@ class Login extends Controller
         }
 
         // ['code' => 1, 'data' => url('index/index'), 'msg' => '登录成功']
-        return json(msg(1, url('index/index'), '登录成功'));
+        return json(msg(1, url('Index/index'), '登录成功'));
     }
 
     // 验证码
