@@ -4,14 +4,16 @@ namespace app\shopping\controller;
 use think\Controller;
 
 class Index extends Controller{
-    
+    //后台主页
     public function index(){
-//        if(!session('userinfo')){
-//            return $this->error("请先登录",'shopping/Login/index');
-//        }else{
-//            return $this->fetch('index');
-//        }
-        return $this->fetch();
+        //检测管理员是否登陆
+        if(!session('userinfo')){
+            //未登录，跳转到登陆页面
+           return $this->redirect('login/index');
+        }else{
+            return $this->fetch('index');
+        }
+
     }
     
     public function main(){

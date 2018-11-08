@@ -24,11 +24,12 @@ class Login extends Controller {
         if (!request()->isPost()) {
             $this->redirect('index/index');
         }
-        $name = input('post.adminname');
+        $name = input('post.username');
         $passwd = input('post.password');
-
+        
         if (!$name || !$passwd) {
-            return array('status' => 0, 'msg' => '用户名和密码不能为空');
+            
+           exit(json_encode(array('status' => 0, 'msg' => '用户名和密码不能为空'))) ;
         }
 
         $info = AdminModel::where(['username' => $name])->find();
@@ -40,14 +41,14 @@ class Login extends Controller {
         }
         //登入成功，存入session
         Session::set('userinfo', $info['username']);
-        return $this->fetch('index/index');
+        return $this->success('登录成功','Index/index');
     }
 
     //退出操作
     public function doOut() {
         echo '退出后台管理';
         session('userinfo', null);
-        return $this->fetch('login');
+        return $this->success('退出成功','Index/index');
     }
 
 }
