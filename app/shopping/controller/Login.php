@@ -41,14 +41,16 @@ class Login extends Controller {
         }
         //登入成功，存入session
         Session::set('userinfo', $info['username']);
-        return $this->success('登录成功','Index/index');
+        return $this->redirect('Index/index');
+//        return $this->success('登录成功','Index/index');
     }
 
     //退出操作
     public function doOut() {
         echo '退出后台管理';
         session('userinfo', null);
-        return $this->success('退出成功','Index/index');
+        return $this->redirect('Index/index');
+//        return $this->success('退出成功','Index/index');
     }
 
 }

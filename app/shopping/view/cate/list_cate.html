@@ -12,6 +12,19 @@ and open the template in the editor.
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>分类列表</title>
 <link rel="stylesheet" href="/static/shopping/css/backstage.css">
+<style type='text/css'>
+    .pager{
+                list-style-type:none;
+                margin: 60px 0 0 40px;
+            }
+            .pager ul{
+                list-style-type:none;
+            }
+            .pager ul li{
+                float: left;
+                padding: 20px;
+            }
+</style>
 </head>
 <body>
 <div class="details">
@@ -31,33 +44,32 @@ and open the template in the editor.
                             </tr>
                         </thead>
                         <tbody>
-                        <?php  //foreach($rows as $row):?>
+                        {foreach $rows as $row}
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
-                                <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php //echo $row['id'];?></label></td>
-                                <td><?php //echo $row['cName'];?></td>
-                                <td align="center"><input type="button" value="修改" class="btn" onclick="editCate(<?php //echo $row['id'];?>)"><input type="button" value="删除" class="btn"  onclick="delCate(<?php //echo $row['id'];?>)"></td>
+                                <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$row['id']}</label></td>
+                                <td>{$row['c_name']}</td>
+                                <td align="center"><input type="button" value="修改" class="btn" onclick="editCate({$row['id']})"><input type="button" value="删除" class="btn"  onclick="delCate({$row['id']})"></td>
                             </tr>
-                            <?php //endforeach;?>
-                            <?php //if($totalRows>$pageSize):?>
-                            <tr>
-                            	<td colspan="4"><?php //echo showPage($page, $totalPage);?></td>
-                            </tr>
-                            <?php //endif;?>
+                            {/foreach}
+                           
                         </tbody>
                     </table>
-                </div>
+                </div> <ul class="pager">
+                <li><a href="?page=1">{$page}</a></li>
+
+            </ul>
 <script type="text/javascript">
 	function editCate(id){
-		window.location="editCate.php?id="+id;
+		window.location="index?act=editCate&id="+id;
 	}
 	function delCate(id){
 		if(window.confirm("您确定要删除吗？删除之后不能恢复哦！！！")){
-			window.location="doAdminAction.php?act=delCate&id="+id;
+			window.location="delCate?id="+id;
 		}
 	}
 	function addCate(){
-		window.location="addCate.php";
+		window.location="index?act=addCate";
 	}
 </script>
 </body>
