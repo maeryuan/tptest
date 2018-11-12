@@ -15,12 +15,12 @@ class Cate extends Controller {
         if ($act == 'editCate') {
             $id = input('get.id');
             if (empty($id)) {
-                $mes = json_encode(array('code' => '1005', 'mes' => '操作超时'));
+                $mes = to_json(array('code' => '1005', 'mes' => '操作超时'));
                 return $mes;
             }
             $row = CateModel::where(['id' => $id])->find();
             if (!$row) {
-                $mes = json_encode(array('code' => '1006', 'mes' => '操作失败'));
+                $mes = to_json(array('code' => '1006', 'mes' => '操作失败'));
                 return $mes;
             }
             $this->assign('cName', $row['c_name']);
@@ -34,12 +34,12 @@ class Cate extends Controller {
         $cateName = input('post.cName');
         //分类名不能为空
         if (empty($cateName)) {
-            $mes = json_encode(array('code' => '1001', 'mes' => '分类名称不能为空'), JSON_UNESCAPED_UNICODE);
+            $mes = to_json(array('code' => '1001', 'mes' => '分类名称不能为空'), JSON_UNESCAPED_UNICODE);
             return $mes;
         }
         //分类名称是否已存在
         if (CateModel::where(['c_name' => $cateName])->find()) {
-            $mes = json_encode(array('code' => '1002', 'mes' => '该分类已存在'), JSON_UNESCAPED_UNICODE);
+            $mes = to_json(array('code' => '1002', 'mes' => '该分类已存在'), JSON_UNESCAPED_UNICODE);
             return $mes;
         }
         //添加到数据库
@@ -58,13 +58,13 @@ class Cate extends Controller {
         $id = input('get.id');
         //判断是否就收到数据
         if (empty($id)) {
-            $mes = json_encode(array('code' => '1005', 'mes' => '操作超时'));
+            $mes = to_json(array('code' => '1005', 'mes' => '操作超时'));
             return $mes;
         }
         $cateInfo = input('post.cName');
         //验证 接收的cateInfo是否合格
         if (empty($cateInfo)) {
-            $mes = json_encode(array('code' => '1006', 'mes' => '分类名不能为空'));
+            $mes = to_json(array('code' => '1006', 'mes' => '分类名不能为空'));
             return $mes;
         }
         //更新数据
@@ -91,7 +91,7 @@ class Cate extends Controller {
         $id = input('get.id');
         //判断是否就收到数据
         if (empty($id)) {
-            $mes = json_encode(array('code' => '1005', 'mes' => '操作超时'));
+            $mes = to_json(array('code' => '1005', 'mes' => '操作超时'));
             return $mes;
         }
         $res = CateModel::where(['id'=>$id])->delete();

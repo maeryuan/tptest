@@ -29,7 +29,7 @@ class Login extends Controller {
         
         if (!$name || !$passwd) {
             
-           exit(json_encode(array('status' => 0, 'msg' => '用户名和密码不能为空'))) ;
+           exit(to_json(mes(0, '用户名和密码不能为空','null'))) ;
         }
 
         $info = AdminModel::where(['username' => $name])->find();
@@ -37,12 +37,12 @@ class Login extends Controller {
         $md5_passwd = md5($passwd);
 
         if (!$info || $md5_passwd != $info['password']) {
-            exit(json_encode(array('status' => 0, 'msg' => '用户名或密码错误，请重新输入')));
+            exit(to_json(mes(0, '用户名或密码错误，请重新输入',null)));
         }
         //登入成功，存入session
         Session::set('userinfo', $info['username']);
         return $this->redirect('Index/index');
-//        return $this->success('登录成功','Index/index');
+
     }
 
     //退出操作
@@ -50,7 +50,7 @@ class Login extends Controller {
         echo '退出后台管理';
         session('userinfo', null);
         return $this->redirect('Index/index');
-//        return $this->success('退出成功','Index/index');
+
     }
 
 }

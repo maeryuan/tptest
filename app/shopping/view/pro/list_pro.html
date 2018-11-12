@@ -61,44 +61,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php //foreach($rows as $row):?>
+                        {foreach $rows as $row}
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
-                                <td><input type="checkbox" id="c<?php //echo $row['id'];?>" class="check" value=<?php //echo $row['id'];?>><label for="c1" class="label"><?php //echo $row['id'];?></label></td>
-                                <td><?php //echo $row['pName']; ?></td>
-                                <td><?php //echo $row['cName'];?></td>
+                                <td><input type="checkbox" id="c<?php echo $row['id'];?>" class="check" value=<?php echo $row['id'];?>><label for="c1" class="label"><?php echo $row['id'];?></label></td>
+                                <td><?php echo $row['p_name']; ?></td>
+                                <td><?php// echo $row['c_name'];?></td>
                                 <td>
-                                	<?php //echo $row['isShow']==1?"上架":"下架";?>
+                                	<?php echo $row['is_show']==1?"上架":"下架";?>
                                 </td>
-                                 <td><?php //echo date("Y-m-d H:i:s",$row['pubTime']);?></td>
-                                  <td><?php //echo $row['iPrice'];?>元</td>
+                                 <td><?php echo date("Y-m-d H:i:s",$row['pub_time']);?></td>
+                                  <td><?php echo $row['i_price'];?>元</td>
                                 <td align="center">
-                                				<input type="button" value="详情" class="btn" onclick="showDetail(<?php //echo $row['id'];?>,'<?php //echo $row['pName'];?>')"><input type="button" value="修改" class="btn" onclick="editPro(<?php //echo $row['id'];?>)"><input type="button" value="删除" class="btn"onclick="delPro(<?php// echo $row['id'];?>)">
+                                				<input type="button" value="详情" class="btn" onclick="showDetail({$row['id']},{$row['p_name']})"><input type="button" value="修改" class="btn" onclick="editPro({$row['id']})"><input type="button" value="删除" class="btn"onclick="delPro({$row['id']})">
 					                            <div id="showDetail<?php //echo $row['id'];?>" style="display:none;">
 					                        	<table class="table" cellspacing="0" cellpadding="0">
 					                        		<tr>
 					                        			<td width="20%" align="right">商品名称</td>
-					                        			<td><?php //echo $row['pName'];?></td>
+					                        			<td><?php echo $row['p_name'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td width="20%"  align="right">商品类别</td>
-					                        			<td><?php //echo $row['cName'];?></td>
+					                        			<td><?php //echo $row['c_name'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td width="20%"  align="right">商品货号</td>
-					                        			<td><?php //echo $row['pSn'];?></td>
+					                        			<td><?php echo $row['p_sn'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td width="20%"  align="right">商品数量</td>
-					                        			<td><?php //echo $row['pNum'];?></td>
+					                        			<td><?php echo $row['p_num'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td  width="20%"  align="right">商品价格</td>
-					                        			<td><?php //echo $row['mPrice'];?></td>
+					                        			<td><?php echo $row['m_price'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td  width="20%"  align="right">幕课网价格</td>
-					                        			<td><?php //echo $row['iPrice'];?></td>
+					                        			<td><?php echo $row['i_price'];?></td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td width="20%"  align="right">商品图片</td>
@@ -114,28 +114,28 @@
 					                        		<tr>
 					                        			<td width="20%"  align="right">是否上架</td>
 					                        			<td>
-					                        				<?php //echo $row['isShow']==1?"上架":"下架";?>
+					                        				<?php echo $row['is_show']==1?"上架":"下架";?>
 					                        			</td>
 					                        		</tr>
 					                        		<tr>
 					                        			<td width="20%"  align="right">是否热卖</td>
 					                        			<td>
-					                        				<?php //echo $row['isHot']==1?"热卖":"正常";?>
+					                        				<?php echo $row['is_hot']==1?"热卖":"正常";?>
 					                        			</td>
 					                        		</tr>
 					                        	</table>
 					                        	<span style="display:block;width:80%; ">
 					                        	商品描述<br/>
-					                        	<?php //echo $row['pDesc'];?>
+					                        	<?php echo $row['p_desc'];?>
 					                        	</span>
 					                        </div>
                                 
                                 </td>
                             </tr>
-                           <?php  //endforeach;?>
+                          {/foreach}
                            <?php //if($totalRows>$pageSize):?>
                             <tr>
-                            	<td colspan="7"><?php /**echo showPage($page, $totalPage,"keywords={$keywords}&order={$order}");/?></td>
+                            	<td colspan="7"><?php //echo showPage($page, $totalPage,"keywords={//$keywords}&order={//$order}");/?></td>
                             </tr>
                             <?php //endif;?>
                         </tbody>

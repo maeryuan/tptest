@@ -35,42 +35,42 @@
 </head>
 <body>
 <h3>添加商品</h3>
-<form action="doAdminAction.php?act=addPro" method="post" enctype="multipart/form-data">
+<form action="addPro" method="post" enctype="multipart/form-data">
 <table width="70%"  border="1" cellpadding="5" cellspacing="0" bgcolor="#cccccc">
 	<tr>
 		<td align="right">商品名称</td>
-		<td><input type="text" name="pName"  placeholder="请输入商品名称"/></td>
+		<td><input type="text" name="p_name"  placeholder="请输入商品名称"/></td>
 	</tr>
 	<tr>
 		<td align="right">商品分类</td>
 		<td>
 		<select name="cId">
-			<?php //foreach($rows as $row):?>
-				<option value="<?php //echo $row['id'];?>"><?php //echo $row['cName'];?></option>
-			<?php// endforeach;?>
+			{foreach $rows as $row}
+				<option value="{$row['id']}">{$row['c_name']}</option>
+			{/foreach}
 		</select>
 		</td>
 	</tr>
 	<tr>
 		<td align="right">商品货号</td>
-		<td><input type="text" name="pSn"  placeholder="请输入商品货号"/></td>
+		<td><input type="text" name="p_sn"  placeholder="请输入商品货号"/></td>
 	</tr>
 	<tr>
 		<td align="right">商品数量</td>
-		<td><input type="text" name="pNum"  placeholder="请输入商品数量"/></td>
+		<td><input type="text" name="p_num"  placeholder="请输入商品数量"/></td>
 	</tr>
 	<tr>
 		<td align="right">商品市场价</td>
-		<td><input type="text" name="mPrice"  placeholder="请输入商品市场价"/></td>
+		<td><input type="text" name="m_price"  placeholder="请输入商品市场价"/></td>
 	</tr>
 	<tr>
 		<td align="right">商品慕课价</td>
-		<td><input type="text" name="iPrice"  placeholder="请输入商品慕课价"/></td>
+		<td><input type="text" name="i_price"  placeholder="请输入商品慕课价"/></td>
 	</tr>
 	<tr>
 		<td align="right">商品描述</td>
 		<td>
-			<textarea name="pDesc" id="editor_id" style="width:100%;height:150px;"></textarea>
+			<textarea name="p_desc" id="editor_id" style="width:100%;height:150px;"></textarea>
 		</td>
 	</tr>
 	<tr>

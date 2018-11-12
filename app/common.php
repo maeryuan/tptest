@@ -10,3 +10,17 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+function to_json($data){
+    return json_encode($data,JSON_UNESCAPED_UNICODE);
+}
+
+/**
+ * 统一返回信息
+ * @param $code
+ * @param $data
+ * @param $msge
+ */
+function mes($code, $mes, $data)
+{
+    return compact('code', 'mes', 'data');
+}

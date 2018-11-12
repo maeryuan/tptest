@@ -32,22 +32,22 @@ class Admin extends Controller {
         $arr = input('post.');
         //判断是否为空
         if(empty($arr['username'])||empty($arr['password'])||empty($arr['email'])){
-            $mes = json_encode(array('code'=>'1001','mes'=>'用户名|密码|邮箱不能为空'));
+            $mes = to_json(array('code'=>'1001','mes'=>'用户名|密码|邮箱不能为空'));
             return $mes;
         }
         //判断用户名是否已存在
         if(AdminModel::where(['username'=>$arr['username']])->find()){
-            $mes = json_encode(array('code'=>'1002','mes'=>'用户名已存在'));
+            $mes = to_json(array('code'=>'1002','mes'=>'用户名已存在'));
             return $mes;
         }
         //判断密码长度是否符合要求
         if(strlen($arr['password'])<6 ||  strlen($arr['password'])>16){
-            $mes = json_encode(array('code'=>'1003','mes'=>'密码长度应为6~16字节长度'));
+            $mes = to_json(array('code'=>'1003','mes'=>'密码长度应为6~16字节长度'));
             return $mes;
         }
         //判断email是否符合
          if(AdminModel::where(['email'=>$arr['email']])->find()){
-            $mes = json_encode(array('code'=>'1004','mes'=>'该邮箱已注册'));
+            $mes = to_json(array('code'=>'1004','mes'=>'该邮箱已注册'));
             return $mes;
         }
         $arr['password'] = md5(input('post.password'));
