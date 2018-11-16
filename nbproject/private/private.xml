@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/controller/Pro.php</file>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/view/index/index.html</file>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/common.php</file>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/view/pro/add_pro.html</file>
-            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/view/pro/list_pro.html</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/controller/Admin.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/controller/User.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/validate/UserValidate.php</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/view/user/list_user.html</file>
+            <file>file:/E:/phpStudy/PHPTutorial/WWW/tt/app/shopping/view/user/add_user.html</file>
         </group>
     </open-files>
 </project-private>

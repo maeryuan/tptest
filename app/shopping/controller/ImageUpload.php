@@ -23,6 +23,7 @@ class ImageUpload extends Controller {
 
         // 获取表单上传文件 例如上传了001.jpg
         $file = request()->file('image');
+        var_dump($file);exit;
         //校验器，判断图片格式是否正确
         if (true !== $this->validate(['image' => $file], ['image' => 'require|image'])) {
             $this->error('请选择图像文件');
