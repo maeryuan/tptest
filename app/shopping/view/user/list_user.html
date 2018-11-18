@@ -51,7 +51,7 @@
                             echo $row['active_flag']==0?"未激活":"激活";
                             ?>
                         </td>
-                        <td align="center"><input type="button" value="修改" class="btn" onclick="editUser( < ?php echo $row['id']; ? > )"><input type="button" value="删除" class="btn"  onclick="delUser( < ?php echo $row['id']; ? > )"></td>
+                        <td align="center"><input type="button" value="修改" class="btn" onclick="editUser({$row['id']})"><input type="button" value="删除" class="btn"  onclick="delUser({$row['id']})"></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -68,7 +68,7 @@
                 window.location = "index?act=addUser";
                 }
         function editUser(id){
-        window.location = "editUser?id=" + id;
+        window.location = "index?act=editUser&id=" + id;
         }
         function delUser(id){
         if (window.confirm("您确定要删除吗？删除之后不可以恢复哦！！！")){
