@@ -3,11 +3,15 @@
 namespace app\shopping\controller;
 
 use think\Controller;
-use think\Image;
 use app\shopping\model\AlbumModel;
 use app\shopping\model\ProModel;
 
 class Images extends Controller {
+     // 文件上传表单
+    public function index() {
+
+        return $this->fetch();
+    }
 
     //图片列表
     public function listProImages() {
@@ -36,18 +40,13 @@ class Images extends Controller {
             $mes = to_json(mes(1005, '操作超时', ''));
             return $mes;
         }
-//        echo'<pre>';
-//        var_dump($rows[17]['album_path']);exit;
+
         $this->assign('rows',$rows);
 
         return $this->fetch();
     }
 
-    // 文件上传表单
-    public function index() {
-
-        return $this->fetch();
-    }
+   
 
     // 图片上传处理
     public function picture() {

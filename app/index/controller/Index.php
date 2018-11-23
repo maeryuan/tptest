@@ -3,6 +3,7 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Config;
 
 class Index extends Controller {
     
@@ -23,5 +24,12 @@ class Index extends Controller {
      */
     public function login(){
         return $this->fetch('user/login');
+    }
+    
+      public function test() {
+//        $res = Config::get();
+//        $res = config();
+        $res = Config::get('app_host');
+        dump($res);
     }
 }

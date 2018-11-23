@@ -3,6 +3,7 @@
 namespace app\shopping\controller;
 use think\Controller;
 
+
 class Index extends Controller{
     //后台主页
     public function index(){
@@ -21,4 +22,7 @@ class Index extends Controller{
         $this->assign('apache_version',$version);
         return $this->fetch('/main');
     }
+    
+  
+
 }
