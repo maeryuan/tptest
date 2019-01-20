@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>红包</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><a href="addRedpacket">添加红包模板</a></div>
+        <table> 
+            <tr>
+               <td>id</td> <td>红包名</td><td>红包类型</td> <td>利率</td> <td>金额</td><td>过期时间</td>
+                <td>最小投资金额</td><td>最大投资金额</td><td>允许红包的使用的标的的最小期限</td>
+                <td>允许红包的使用的标的的最大期限</td>
+                <td>创建时间</td>
+                <td>修改时间</td>
+            </tr>
+            {volist name="res" id="data"}
+            <tr>
+                <td>{$data.redpacket_model_id}</td>
+                <td>{$data.rd_name}</td>
+                <td>{$data.rd_type}</td>
+                <td>{$data.rate}</td>
+                <td>{$data.cash}</td>
+                <td>{$data.valid_time}</td>
+                <td>{$data.invest_min_amount}</td>
+                <td>{$data.invest_max_amount}</td>
+                <td>{$data.limit_min_date}</td>
+                <td>{$data.limit_max_date}</td> 
+                <td>{$data.create_time}</td>
+                <td>{$data.update_time}</td> 
+               
+                                            
+                <td><a href="updateRedpacket?redpacket_model_id={$data.redpacket_model_id}">编辑</a></td>
+                <td><a href="delRedpacket.html?redpacket_model_id={$data.redpacket_model_id}">删除</a></td>
+  
+            </tr>
+
+            {/volist}</table>
+    </body>
+</html>

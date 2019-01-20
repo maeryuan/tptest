@@ -1,0 +1,29 @@
+controller 
+Index
+Admin [添加，编辑，修改，删除] 和 Cate [添加，编辑，修改，删除]
+Login [登陆]
+
+
+model
+AdminModel 和CateModel
+
+ 
+
+view
+admin [add_admin.html][edit_admin.htnl][list_admin.html]
+cate  [add_cate.html][edit_cate.html][list_admin.html]
+login [login.html]
+index [index.html]
+
+
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>用户管理</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>用户列表<br>
+            <a href="index?act=add">添加用户</a>
+        </div>
+        <div>  <table  >
+            <tr >
+                <td>姓名</td>
+                <td>邮箱</td>
+                <td>操作</td>
+            </tr>
+            {foreach $rows as $row}
+            <tr>
+                <td>{$row['user_name']}</td>
+                <td>{$row['email']}</td>
+                <td><a href="index?act=edit&&user_id={$row['id']}">编辑</a></td>
+            </tr>
+            {/foreach}
+        </table>
+        </div>
+    </body>
+</html>

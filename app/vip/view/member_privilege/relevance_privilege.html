@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>关联特权和等级</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>会员等级：{$rankName}</div>
+        <form action="doRelevance?rank_id={$rankId}" method="post"> 
+            添加特权<br /><br /> 
+            <label><input name="privilege_name1" type="checkbox" value="birthday" />birthday </label> 
+            <label><input name="privilege_name2" type="checkbox" value="inc_rate" />inc_rate </label> 
+            <label><input name="privilege_name3" type="checkbox" value="inc_point" />inc_point </label> 
+            <label><input name="privilege_name4" type="checkbox" value="discount" />discount </label> 
+            <label><input name="privilege_name5" type="checkbox" value="serve" />serve </label>
+            <input type='submit' value='提交'>
+        </form>
+    </body>
+</html>

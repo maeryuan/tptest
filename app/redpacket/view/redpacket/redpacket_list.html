@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!--<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+             <table>
+                {volist name='list' id='user'}
+               <tr> <td>{$user.rd_name}</td></tr>
+                {/volist}
+           <tr> <td>{$page}</td></tr> 
+        </div>
+        
+</table>
+    </body>
+</html>-->
+<html>
+    <head>
+        <title>红包</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/redpacket/css/backstage.css">
+        <style type='text/css'>
+            .pager{
+                list-style-type:none;
+                margin: 60px 0 0 40px;
+            }
+            .pager ul{
+                list-style-type:none;
+            }
+            .pager ul li{
+                float: left;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>   
+
+        <div class="details">
+            <div class="details_operation clearfix">
+                <div class="bui_select">
+                    <input type="button" value="添&nbsp;&nbsp;加" class="add"  onclick="add()">
+                </div>
+
+            </div>
+            <!--表格-->
+            <table class="table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th width="5%">id</th>
+                        <th width="10%">红包名</th>
+                        <th width="5%">红包类型</th>
+                        <th width="10%">利率/金额</th>
+                        <th width="5%">过期时间</th>
+                        <th width="10%">min金额</th>
+                        <th width="10%">max金额</th>
+                        <th width="5%">min期限</th>
+                        <th width="5%">max期限</th>
+                        <th width="10%">创建时间</th>
+                        <th width="10%">修改时间</th>
+                        <th>操作</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    {volist name="list" id="data"}
+
+                    <tr>
+                        <!--这里的id和for里面的c1 需要循环出来-->
+                        <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$data.redpacket_model_id}</label></td>
+                        <td>{$data.rd_name}</td>
+                        <td>{$data.rd_type==0?'现金':'利率'}</td>
+                        <td>{$data.rate}/{$data.cash}</td>
+
+                        <td>{$data.valid_time}</td>
+                        <td>{$data.invest_min_amount}</td>
+                        <td>{$data.invest_max_amount}</td>
+                        <td>{$data.limit_min_date}</td>
+                        <td>{$data.limit_max_date}</td> 
+                        <td>{$data.create_time}</td>
+                        <td>{$data.update_time}</td> 
+                        <td align="center"><input type="button" value="修改" class="btn" onclick="edit({$data.redpacket_model_id})"><input type="button" value="删除" class="btn"  onclick="del({$data.redpacket_model_id})"></td>
+                    </tr>
+
+                    {/volist}</table>
+            <div><ul class="pager">
+                    <li><a href="?page=1">{$page}</a></li>
+                </ul>
+            </div>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+            function edit(id){
+            window.location = "toEdit?act=editCate&id=" + id;
+            }
+    function del(id){
+    if (window.confirm("您确定要删除吗？删除之后不能恢复哦！！！")){
+    window.location = "del?id=" + id;
+    }
+    }
+    function add(){
+    window.location = "toAddRedpacket";
+    }
+</script>
+</body>
+</html>

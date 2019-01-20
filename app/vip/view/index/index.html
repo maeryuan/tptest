@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>会员中心</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h4>会员:李珊</h4>
+            <h5>vip等级：{$rankName}</h5>
+            <h6>成长值：{$availableRankPoints}/{$maxPoints}</h6>
+            <h6>再获得<?php echo $maxPoints-$availableRankPoints;?>成长值即可升为“钻石会员”</h6>
+            <h5><a href='../MemberFlow/index?user_id={$userId}'>成长记录</a></h5>
+            <ul>
+
+            </ul>
+        </div>
+
+
+        <div>vip等级对应特权：<br>
+            <?php for($i = 1;$i <= count($rows);$i++){ ?>
+
+            <?php foreach($rows  as $i=>$row){ ?>
+            <?php switch($i){ ?>
+            <?php case '1':echo'普通会员:'.'<br>';?>
+            <?php break;?>
+            <?php  case 2:echo'青铜会员:'.'<br>';?>
+            <?php break;?>
+            <?php  case 3:echo'白银会员:'.'<br>';?>
+            <?php break;?>
+            <?php  case 4:echo'黄金会员:'.'<br>';?>
+            <?php break;?>
+            <?php  case 5:echo'钻石会员:'.'<br>';?>
+            <?php break;?>
+            <?php }?>
+
+            <?php foreach($row  as $data){ ?>
+            <?php echo $data['privilege_name']; ?><br>
+            <?php echo $data['content'];?><br>
+            <?php } ?>
+            <?php echo '<br>'; } ?>
+
+            <?php } ?>
+        </div>
+        <div>特权内容：
+            {foreach $privilegeInfo as $val}
+            <li>{$val['privilege_name']}:
+                {$val['content']['title']}
+
+                {$val['content']['img_url']}
+                {foreach $val['content']['data'] as $row}
+                {$row['msg']}
+                {/foreach}
+            </li>
+            {/foreach}
+        </div>
+    </body>
+</html>

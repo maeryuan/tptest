@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>角色设置权限</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body><h5>角色设置权限</h5>
+        <form action='setConf?r_id={$rId}' method="post">
+            <div>
+                当前角色为：{$roleName}<br>
+                选择权限：<br>
+                {if($rows)}{foreach $rows as $row}
+                <label><input name="a_id" type="checkbox" value="{$row['id']}" />{$row['auth_name']}</label><br>{/foreach}{/if} <br>
+                <input type='submit' value="提交"><br>
+            </div>
+        </form>
+    </body>
+</html>

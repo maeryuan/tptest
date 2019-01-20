@@ -1,0 +1,79 @@
+<html>  
+<head>  
+<meta http-equiv="content-type" content="text/html;charset=utf-8">  
+    <title>menudemo</title>  
+    <style type="text/css">  
+        #nav{  
+            width: 500px;  
+            height:40px;  
+            background-color: #eee;  
+            margin: auto;  
+        }  
+        *{  
+            margin: 0px;  
+            padding: 0px;  
+        }  
+        a{  
+            text-decoration: none;  
+              
+            width: 100px;  
+            text-align: center;  
+            line-height: 40px;  
+            display: block;  
+        }  
+        a:hover{  
+            background:#930;  
+        }  
+        ul {  
+            list-style: none;  
+        }  
+        ul li ul{  
+                margin-top: 2px;  
+                background-color: #eea;  
+                display: none;  
+        }  
+        ul li:hover ul{  
+                display: block;  
+        }  
+        ul li ul li{  
+            float: none;  
+        }  
+        ul li{  
+                float: left;  
+        }  
+    </style>  
+</head>  
+  
+<body>  
+    <div id="nav">  
+        <ul>  
+            <li><a href="#">首页</a></li>  
+            <li><a href="#">语言</a>  
+                <ul>  
+                    <li><a href="#">java</a></li>  
+                    <li><a href="#">javascript</a></li>  
+                    <li><a href="#">jquery</a></li>  
+                    <li><a href="#">python</a></li>  
+                </ul>  
+            </li>  
+            <li><a href="#">动态</a>  
+                <ul>  
+                    <li><a href="#">开源项目</a></li>  
+                    <li><a href="#">源码下载</a></li>  
+                    <li><a href="#">小项目</a></li>  
+                    <li><a href="#">新闻动态</a></li>  
+                </ul>  
+            </li>  
+            <li><a href="#">视频</a>  
+                <ul>  
+                    <li><a href="#">开源视频</a></li>  
+                    <li><a href="#">java教程</a></li>  
+                    <li><a href="#">php教程</a></li>  
+                    <li><a href="#">html教程</a></li>  
+                </ul>  
+            </li>  
+            <li><a href="#">登录</a></li>  
+        </ul>  
+    </div>  
+</body>  
+</html>  

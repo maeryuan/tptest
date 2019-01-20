@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>编辑用户</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <h5>编辑用户</h5>
+        <form action="editUser?user_id={$userInfo['id']}" method="post"><br>
+            用户名称： <input type='text' name='user_name' placeholder="{$userInfo['user_name']}"><br>
+            用户邮箱： <input type='text' name='email' placeholder="{$userInfo['email']}"><br>
+           
+           所属角色：{if($rows)}{foreach $rows as $row}
+           <label><input name="r_id" type="radio" value="{$row['id']}" />{$row['role_name']}</label>{/foreach}{/if} <br>
+            <input type='submit' value="提交"><br>
+        </form>
+    </body>
+</html>

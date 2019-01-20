@@ -1,8 +1,26 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace app\redpacket\controller;
 
+use think\Controller;
+
+
+class Index extends Controller {
+
+    public function index() {
+        
+        return $this->fetch('index');      
+    }
+    
+  
+    public function home(){
+        return $this->fetch('home'); 
+    }
+     
+    public function menu(){
+        return $this->fetch('menu');
+    }
+    public function test(){
+        return $this->fetch('topp');
+    }
+}

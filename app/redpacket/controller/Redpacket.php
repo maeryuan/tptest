@@ -2,7 +2,7 @@
 
 namespace app\redpacket\controller;
 use think\Controller;
-
+use app\redpacket\model\RedpacketModel;
 class Redpacket extends Controller{
     public function index(){
         echo '红包';

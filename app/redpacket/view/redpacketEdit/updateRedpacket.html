@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>更新</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h1>更新</h1></div>
+         <form action="updateInfo?redpacket_model_id={$res.redpacket_model_id}" method="post">
+            <table>
+                <p>{$res.rd_name}</p>
+                
+                
+                <tr>               
+                    <td>红包名:<input type="text" name="rd_name"value="{$res.rd_name}" placeholder=""/></td>
+                </tr>
+                <tr>   <td>红包类型:<input type="text" name="rd_type"value="{$res.rd_type}" placeholder=""/></td> </tr>
+                <tr>   <td>利率:<input type="text" name="rate" value="{$res.rate}"placeholder=""/></td> </tr>
+                <tr>   <td>金额:<input type="text" name="cash"value="{$res.cash}" placeholder=""/></td> </tr>
+                <tr>    <td>过期时间:<input type="text" name="valid_time"value="{$res.valid_time}" placeholder=""/></td> </tr>
+                <tr>    <td>最小投资金额:<input type="text" name="invest_min_amount"value="{$res.invest_min_amount}" placeholder=""/></td> </tr>
+                <tr>    <td>最大投资金额:<input type="text" name="invest_max_amount"value="{$res.invest_max_amount}" placeholder=""/></td> </tr>
+                <tr>    <td>允许红包的使用的标的的最小期限:<input type="text" name="limit_min_date"value="{$res.limit_min_date}" placeholder=""/></td> </tr>
+                <tr>    <td>允许红包的使用的标的的最大期限:<input type="text" name="limit_max_date"value="{$res.limit_max_date}" placeholder=""/></td>  </tr>            
+                <tr>
+                    <td><input type="submit" value="提交更新" ></td>
+                </tr>
+             </table>
+        </form>
+    </body>
+</html>

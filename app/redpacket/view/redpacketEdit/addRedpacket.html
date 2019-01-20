@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body><h1>添加操作</h1>
+        <form action="addInfo" method="post">
+            <table>
+
+
+                <tr>                
+                    <td>红包名:<input type="text" name="rd_name" placeholder=""/></td>
+                </tr>
+                <tr>   <td>红包类型:<input type="text" name="rd_type" placeholder=""/></td> </tr>
+                <tr>   <td>利率:<input type="text" name="rate" placeholder=""/></td> </tr>
+                <tr>   <td>金额:<input type="text" name="cash" placeholder=""/></td> </tr>
+                <tr>    <td>过期时间:<input type="text" name="valid_time" placeholder=""/></td> </tr>
+                <tr>    <td>最小投资金额:<input type="text" name="invest_min_amount" placeholder=""/></td> </tr>
+                <tr>    <td>最大投资金额:<input type="text" name="invest_max_amount" placeholder=""/></td> </tr>
+                <tr>    <td>允许红包的使用的标的的最小期限:<input type="text" name="limit_min_date" placeholder=""/></td> </tr>
+                <tr>    <td>允许红包的使用的标的的最大期限:<input type="text" name="limit_max_date" placeholder=""/></td>  </tr>            
+                <tr>
+                    <td><input type="submit" value="添加" ></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

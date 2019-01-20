@@ -73,13 +73,13 @@ class User extends Controller {
             if (!$result) {
                 return json(msg(-5, '', '账号不存在或密码错误'));
             }
-            foreach($result as $va){
+            foreach ($result as $va) {
                 $userInfo = $va->toArray();
-            }           
+            }
             session('userName', $userInfo['username']);
             session('userId', $userInfo['id']);
             session('userStatus', 1);
-          
+
             $this->redirect(url('Index/index'));
         }
     }
@@ -91,10 +91,23 @@ class User extends Controller {
 
         #清空session
         session('userName', null);
-        session('userID', NULL);
-        session('userStatus', NULL);//登陆状态
+        session('userId', NULL);
+        session('userStatus', NULL); //登陆状态
 //        session(null);
         $this->redirect(url('Index/index'));
+    }
+
+    /**
+     * 领取红包
+     */
+    public function receiveRedpacket() {
+        #用户登陆后才可以领取红包
+        if (!session('userName')) {
+            //未登录，跳转到登陆页面
+            return $this->redirect('login/index');
+        }
+        $useId = session('userId');
+        $redpackerModelId = input('redpacket_model_id');
     }
 
 }
